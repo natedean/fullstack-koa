@@ -27,7 +27,7 @@ router.post('/add-person', function* (next){
     firstName:body.firstName,
     lastName:body.lastName,
     email:body.email,
-    date: moment().format("dddd, MMMM Do YYYY, h:mm:ss a")
+    date: moment().format("dddd, MMMM Do YYYY, h:mm a")
   });
 
   var peopleCollection = this.mongo.db('simple').collection('people');
