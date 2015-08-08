@@ -11,10 +11,12 @@
   "dependencies": {
     "bluebird": "^2.9.34",
     "co": "^4.6.0",
+    "co-body": "^3.1.0",
     "co-fs": "^1.2.0",
     "koa": "^0.21.0",
     "koa-mongo": "^0.4.1",
     "koa-router": "^5.1.2",
+    "moment": "^2.10.6",
     "mongoose": "^4.1.1"
   }
 }
