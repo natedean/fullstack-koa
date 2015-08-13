@@ -6,6 +6,8 @@ var mongo = require('koa-mongo');
 var serve = require('koa-static');
 var moment = require('moment');
 
+var PORT = process.env.PORT || 3000;
+
 app.use(mongo({
   uri: 'mongodb://localhost/simple',
   max: 100,
@@ -14,7 +16,7 @@ app.use(mongo({
   log: false
 }));
 
-var PORT = process.env.PORT || 3000;
+app.use(serve('./public'));
 
 router.get('/', function* (next){
   this.type = 'text/html';
@@ -24,6 +26,13 @@ router.get('/', function* (next){
 router.get('/angular-people', function* (next){
   this.type = 'text/html';
   this.body = yield fs.readFile('./views/angular-people.html');
+});
+
+router.get('/people', function* (next){
+  var peopleCollection = this.mongo.db('simple').collection('people');
+  var people = yield peopleCollection.find({}).toArray();
+
+  this.body = people;
 });
 
 router.post('/add-person', function* (next){
@@ -36,10 +45,7 @@ router.post('/add-person', function* (next){
     date: moment().format("dddd, MMMM Do YYYY, h:mm a")
   });
 
-  var peopleCollection = this.mongo.db('simple').collection('people');
-  var people = yield peopleCollection.find({}).toArray();
-
-  this.body = people;
+  this.redirect('/angular-people');
 });
 
 app.use(router.routes());
