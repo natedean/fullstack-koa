@@ -3,6 +3,7 @@ var router = require('koa-router')();
 var fs = require('co-fs');
 var parse = require('co-body');
 var mongo = require('koa-mongo');
+var serve = require('koa-static');
 var moment = require('moment');
 
 app.use(mongo({
@@ -17,7 +18,12 @@ var PORT = process.env.PORT || 3000;
 
 router.get('/', function* (next){
   this.type = 'text/html';
-  this.body = yield fs.readFile('./index.html');
+  this.body = yield fs.readFile('./views/index.html');
+});
+
+router.get('/angular-people', function* (next){
+  this.type = 'text/html';
+  this.body = yield fs.readFile('./views/angular-people.html');
 });
 
 router.post('/add-person', function* (next){
