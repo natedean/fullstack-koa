@@ -1,10 +1,51 @@
-<div class="container">
-  <div ng-repeat="person in vm.peopleList" class="panel panel-default">
-    <div class="panel-body">
-      <h3>{{ person.firstName }} {{ person.lastName }}</h3>
-      <p>Email: {{ person.email }}</p>
-      <p>Date Added: {{ (person.dateAdded || person.date || 'Unknown') | date }}</p>
-      <p>Id: {{ person._id }}</p>
+<style>
+  /*  Bootstrap Clearfix */
+
+  /*  Tablet  */
+  @media (min-width:767px){
+
+    /* Column clear fix */
+    .col-md-4:nth-child(3n+1){
+      clear: none;
+    }
+    .col-sm-4:nth-child(3n+1){
+      clear: left;
+    }
+  }
+
+
+  /*  Medium Desktop  */
+  @media (min-width:992px){
+
+    /* Column clear fix */
+    .col-sm-4:nth-child(3n+1){
+      clear: none;
+    }
+    .col-md-4:nth-child(3n+1){
+      clear: left;
+    }
+  }
+
+
+  /*  Large Desktop  */
+  @media (min-width:1200px){
+
+    /* Column clear fix */
+    .col-md-4:nth-child(3n+1),
+    .col-sm-4:nth-child(3n+1){
+      clear: none;
+    }
+  }
+</style>
+<div class="peopleList__container">
+  <div class="row">
+    <div ng-repeat="person in vm.peopleList" class="col-sm-4 col-md-4 panel panel-default">
+      <div class="panel-body">
+        <h3>{{ person.firstName }} {{ person.lastName }}</h3>
+        <p>Email: {{ person.email }}</p>
+        <p>Date Added: {{ (person.dateAdded || person.date || 'Unknown') | date:'dd-mm-yy' }}</p>
+        <p>Id: {{ person._id }}</p>
+      </div>
     </div>
   </div>
 </div>

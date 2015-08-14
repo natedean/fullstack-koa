@@ -7,7 +7,15 @@
 
 </head>
 <body ng-app="myApp">
-<people-list></people-list>
+<div class="container">
+  <div class="header jumbotron text-center">
+    <h2>This is a people list.</h2>
+    <p>This list is being rendered by AngularJS with data retrieved from mongodb via $http service
+      call to koa.js endpoint
+    </p>
+  </div>
+  <people-list></people-list>
+</div>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.3/angular.min.js"></script>
 <script src="./js/angular-people/app.js"></script>

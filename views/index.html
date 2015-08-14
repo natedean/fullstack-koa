@@ -7,13 +7,14 @@
 </head>
 <body>
 <div class="container">
-  <div style="text-align: center">
-    <h1>HELLO FREAKING WORLD FROM KOA</h1>
 
+  <div class="header jumbotron text-center">
+    <h1>HELLO FROM KOA.JS</h1>
     <p>This is being rendered by Koa.js - who need callbacks?</p>
+    <h4>Use the form below to add a name to the database.</h4>
   </div>
 
-  <div class="formContainer" style="max-width: 500px; margin: 0 auto; text-align: center">
+  <div class="formContainer" style="max-width: 400px; margin: 2em auto;">
     <form action="/add-person" method="post">
       <div class="form-group">
         <label for="firstNameInput">First Name</label>
@@ -27,7 +28,7 @@
         <label for="emailInput">Email address</label>
         <input name="email" type="email" class="form-control" id="emailInput" placeholder="BarryWhite@awesometown.org">
       </div>
-      <button type="submit" class="btn btn-default">Submit</button>
+      <button type="submit" class="btn btn-block btn-success">Submit</button>
     </form>
   </div>
 </div>
