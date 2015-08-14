@@ -1,5 +1,4 @@
 var parse = require('co-body');
-var moment = require('moment');
 
 module.exports = function* (next){
   var body = yield parse(this);
@@ -8,7 +7,8 @@ module.exports = function* (next){
     firstName:body.firstName,
     lastName:body.lastName,
     email:body.email,
-    dateAdded: moment().format("dddd, MMMM Do YYYY, h:mm a")
+    dateAdded: new Date(),
+    quality: undefined
   });
 
   this.redirect('/angular-people');

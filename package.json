@@ -19,6 +19,7 @@
     "koa-router": "^5.1.2",
     "koa-static": "^1.4.9",
     "moment": "^2.10.6",
+    "mongodb": "^2.0.40",
     "mongoose": "^4.1.1"
   }
 }
