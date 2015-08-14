@@ -2,18 +2,36 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Document</title>
+  <title>Nate's Tests</title>
+  <link rel="stylesheet" href="./css/bootstrap.min.css"/>
 </head>
 <body>
-<div style="text-align: center">
-  <h1>HELLO FREAKING WORLD FROM KOA</h1>
-  <p>This is being rendered by Koa.js - who need callbacks?</p>
-  <form action="/add-person" method="post">
-    <input name="firstName" placeholder="First Name" required type="text"/>
-    <input name="lastName" placeholder="Last Name" required type="text"/>
-    <input name="email" placeholder="Email" required type="email"/>
-    <button type="submit">Submit</button>
-  </form>
+<div class="container">
+  <div style="text-align: center">
+    <h1>HELLO FREAKING WORLD FROM KOA</h1>
+
+    <p>This is being rendered by Koa.js - who need callbacks?</p>
+  </div>
+
+  <div class="formContainer" style="max-width: 500px; margin: 0 auto; text-align: center">
+    <form action="/add-person" method="post">
+      <div class="form-group">
+        <label for="firstNameInput">First Name</label>
+        <input name="firstName" type="text" class="form-control" id="firstNameInput" placeholder="Barry">
+      </div>
+      <div class="form-group">
+        <label for="lastNameInput">Last Name</label>
+        <input name="lastName" type="text" class="form-control" id="lastNameInput" placeholder="White">
+      </div>
+      <div class="form-group">
+        <label for="emailInput">Email address</label>
+        <input name="email" type="email" class="form-control" id="emailInput" placeholder="BarryWhite@awesometown.org">
+      </div>
+      <button type="submit" class="btn btn-default">Submit</button>
+    </form>
+  </div>
 </div>
+
+
 </body>
 </html>
