@@ -3,6 +3,7 @@
     <div class="panel-body">
       <h3>{{ person.firstName }} {{ person.lastName }}</h3>
       <p>Email: {{ person.email }}</p>
+      <p>Date Added: {{ (person.dateAdded || person.date || 'Unknown') | date }}</p>
       <p>Id: {{ person._id }}</p>
     </div>
   </div>
