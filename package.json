@@ -21,5 +21,14 @@
     "moment": "^2.10.6",
     "mongodb": "^2.0.40",
     "mongoose": "^4.1.1"
+  },
+  "jspm": {
+    "directories": {
+      "baseURL": "src"
+    },
+    "dependencies": {}
+  },
+  "devDependencies": {
+    "html-dist": "^0.1.0"
   }
 }
